@@ -1,128 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/frameLayout"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.udacity.sandwichclub.DetailActivity"
-    >
+    tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <ImageView
-        android:id="@+id/image_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop"
-        android:src="@drawable/chivito1"
-        />
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/detailBackground"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/itemBackground"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp"
+            android:orientation="vertical"
             >
 
-            <TextView
-                android:id="@+id/tv_item_name"
+            <ImageView
+                android:id="@+id/image_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chivito"
-                android:textSize="16sp"
-                android:textColor="#000000"
-                android:textStyle="bold" />
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/sandwich_picture_content_description"
+                android:scaleType="centerCrop"
+                android:src="@drawable/chivito1" />
 
-            <TextView
-                android:id="@+id/tv_also_known_as"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="(Bacon, egg)"
-                android:textColor="#000000"
-                android:textStyle="bold" />
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/detailBackground"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/itemBackground"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_item_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chivito"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_also_known_as"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="4dp"
+                        android:text="(Bacon, egg)"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/itemBackground"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:text='"Chivito is a national dish of Uruguay, It is a thin slice of tender cooked beef steak             (churrasco), with mozzarella, tomatoes, mayonnaise, black or green olives, and commonly             also bacon, fried or hard-boiled eggs and ham, served as a sandwich in a bun, often             accompanied by French fried potatoes. Other ingredients, such as red beets, peas,             grilled or pan-fried red peppers, and slices of cucumber, may be             added.'
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_ingredients_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/itemBackground"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="16dp"
+                    android:text="@string/detail_ingredients_label"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tv_ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/itemBackground"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:text='\"Bun\",\"Churrasco             beef\",\"Bacon\",\"Fried or hard-boiled eggs\",\"Ham\",\"Black or green             olives\",\"Mozzarella\",\"Tomatoes\",\"Mayonnaise\"'
+                    android:textColor="#000000" />
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/itemBackground"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_place_of_origin_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detail_place_of_origin_label"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_place_of_origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taiwan"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            android:paddingTop="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:background="@color/itemBackground"
-            android:text='"Chivito is a national dish of Uruguay, It is a thin slice of tender cooked beef steak             (churrasco), with mozzarella, tomatoes, mayonnaise, black or green olives, and commonly             also bacon, fried or hard-boiled eggs and ham, served as a sandwich in a bun, often             accompanied by French fried potatoes. Other ingredients, such as red beets, peas,             grilled or pan-fried red peppers, and slices of cucumber, may be             added.' />
-
-        <TextView
-            android:id="@+id/tv_ingredients_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:paddingTop="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textColor="#000000"
-            android:background="@color/itemBackground"
-            android:text="@string/detail_ingredients_label"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/tv_ingredients"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:textColor="#000000"
-            android:background="@color/itemBackground"
-            android:text='\"Bun\",\"Churrasco             beef\",\"Bacon\",\"Fried or hard-boiled eggs\",\"Ham\",\"Black or green             olives\",\"Mozzarella\",\"Tomatoes\",\"Mayonnaise\"' />
-
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@color/itemBackground"
-            >
-
-            <TextView
-                android:id="@+id/tv_place_of_origin_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="@string/detail_place_of_origin_label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_place_of_origin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="Taiwan" />
-
-        </LinearLayout>
-    </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>
