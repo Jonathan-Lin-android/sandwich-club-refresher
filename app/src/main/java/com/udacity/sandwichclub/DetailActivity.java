@@ -66,9 +66,17 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich model) {
-        List<String> listAlsoKnownAs = model.getAlsoKnownAs();
+        TextView itemName = findViewById(R.id.tv_item_name);
+        itemName.setText(getModelStringData(model.getMainName()));
+
+        TextView itemDescription = findViewById(R.id.tv_description);
+        itemDescription.setText(getModelStringData(model.getDescription()));
+
+        TextView itemOrigin = findViewById(R.id.tv_place_of_origin);
+        itemOrigin.setText(" " + getModelStringData(model.getPlaceOfOrigin()));
 
         // populating also known as
+        List<String> listAlsoKnownAs = model.getAlsoKnownAs();
         if(listAlsoKnownAs != null && !listAlsoKnownAs.isEmpty()) {
             TextView alsoKnownAsTextView = findViewById(R.id.tv_also_known_as);
             alsoKnownAsTextView.setText(model.getAlsoKnownAs().toString().replace("[", "(").replace("]", ")"));
@@ -77,10 +85,15 @@ public class DetailActivity extends AppCompatActivity {
         // populating ingredients
         List<String> listIngredients = model.getIngredients();
         TextView ingredientsTextView = findViewById(R.id.tv_ingredients);
-        if(listAlsoKnownAs != null && !listAlsoKnownAs.isEmpty()) {
+        if(listIngredients != null && !listIngredients.isEmpty()) {
             ingredientsTextView.setText(model.getIngredients().toString().replace("[", "").replace("]", ""));
         }
         else
             ingredientsTextView.setText("Data not available");
+    }
+
+    private String getModelStringData(String s)
+    {
+        return s == null || s.isEmpty() ? "Data not available" : s;
     }
 }
